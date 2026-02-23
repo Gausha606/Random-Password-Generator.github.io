@@ -29,7 +29,7 @@ Project ko local machine par chalane ke liye niche diye gaye steps follow karein
 Repository Clone karein:
 
 ```Bash
-git clone https://github.com/Gausha606/Random-Password-Generator.git
+git clone https://github.com/Gausha606/Random-Password-Generator.github.io.git
 ```
 
 Project Folder mein jayein:
