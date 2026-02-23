@@ -1,13 +1,90 @@
-  <!DOCTYPE html>
-  <html lang="en">
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Pasword Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="script.js" type="module"></script>
   </head>
   <body>
-    
+    <div class="mainContainer">
+      <h1 class="titleHeading">Generate Random Password</h1>
+      <p class="titleSubHeading">
+        Create cryptographically secure passwords instantly. Local generation
+        ensures your data never leaves your device.
+      </p>
+
+      <form class="passwordForm">
+        <label for="password" class="passlabel">Generated Output</label>
+
+        <div class="passOutputDiv">
+          <input
+            type="text"
+            name="password"
+            id="password"
+            placeholder="k12@45%"
+          />
+          <i class="fa-solid fa-copy copyBtn"></i>
+        </div>
+
+        <div class="rangeDiv">
+          <label for="passwordRange" class="passwordRangeLabel"
+            >Password length</label
+          >
+          <span class="passLength">5</span>
+        </div>
+        <input
+          type="range"
+          id="passwordRange"
+          name="passwordRange"
+          value="12"
+          min="1"
+          max="20"
+        />
+
+        <div class="checkBoxContainer">
+          <!-- upper case box -->
+          <label class="upperCheck" for="uppercase"
+            ><input
+              type="checkbox"
+              name="uppercase"
+              id="uppercase"
+            />Uppercase</label
+          >
+
+          <!-- lower case box -->
+
+          <label class="lowerCheck" for="lowercase"
+            ><input type="checkbox" name="lowercase" id="lowercase" />
+            Lowercase</label
+          >
+
+          <!-- number case box -->
+
+          <label class="numberCheck" for="numbercase"
+            ><input type="checkbox" name="numbercase" id="numbercase" /> Numbers</label
+          >
+
+          <!-- symbols case box -->
+
+          <label class="symbolCheck" for="symbolcase">
+            <input type="checkbox" name="symbolcase" id="symbolcase" /> Symbols</label
+          >
+        </div>
+
+        <button class="generateBtn">
+          <i class="fa-solid fa-arrow-rotate-right arrowIcon"></i>Generate
+          Password
+        </button>
+      </form>
+    </div>
   </body>
-  </html>
+</html>
