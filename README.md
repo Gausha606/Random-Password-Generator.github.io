@@ -1,4 +1,5 @@
-# Random Password Generator
+# Random Password Generator  
+[**🌐 Check Website**](https://gausha606.github.io/Random-Password-Generator.github.io/)
 
 A simple password generator to get random password whenever you click on generate password.
 
