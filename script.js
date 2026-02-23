@@ -15,46 +15,58 @@ let numbersCharacters = "1234567890";
 let symbolCharacters = "~@!#$%^&*()_+-><.,?/':;{]}[|";
 let final;
 
-let allChars =
-  uppercaseCharacters +
-  lowerCaseCharacters +
-  numbersCharacters +
-  symbolCharacters;
-passLength.innerText = passwordRange.value;
-
 passwordRange.addEventListener("input", () => {
   passLength.innerText = passwordRange.value;
 });
 
+function ShufflePasswordString(str) {
+  let arr = str.split("");
+  for (let i = arr.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr.join("");
+}
+
 function generatePassword(final) {
   let password = "";
+  let allowedChar = "";
   let upperChecked = uppercase.checked;
   let lowerChecked = lowerCase.checked;
   let numberChecked = numberCase.checked;
   let symbolChecked = symbolCase.checked;
   if (upperChecked) {
+    allowedChar += uppercaseCharacters;
     password +=
       uppercaseCharacters[
         Math.floor(Math.random() * uppercaseCharacters.length)
       ];
   }
   if (lowerChecked) {
+    allowedChar += lowerCaseCharacters;
     password +=
       lowerCaseCharacters[
         Math.floor(Math.random() * lowerCaseCharacters.length)
       ];
   }
   if (numberChecked) {
-    password += numbers[Math.floor(Math.random() * numbers.length)];
+    allowedChar += numbersCharacters;
+    password +=
+      numbersCharacters[Math.floor(Math.random() * numbersCharacters.length)];
   }
   if (symbolChecked) {
-    password += symbolChar[Math.floor(Math.random() * symbolChar.length)];
+    allowedChar += symbolCharacters;
+    password +=
+      symbolCharacters[Math.floor(Math.random() * symbolCharacters.length)];
   }
 
+  if (allowedChar === "") return alert("Please select at least one option");
+
   while (password.length < final) {
-    password += allChars[Math.floor(Math.random() * allChars.length)];
+    password += allowedChar[Math.floor(Math.random() * allowedChar.length)];
   }
-  passInput.value = password;
+  let finalPassword = ShufflePasswordString(password);
+  passInput.value = finalPassword;
 }
 
 form.addEventListener("submit", (e) => {
