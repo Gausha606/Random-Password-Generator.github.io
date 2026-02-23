@@ -6,7 +6,8 @@ A simple password generator to get random password whenever you click on generat
 
 - Real time password generator.
 - Copy this password to paste it anywhere.
-- Simple and Sweet design
+- Simple and Sweet design.
+- You can customize according your preferences like uppercase, lowercase, numbers or special characters.
 
 ## Description
 
@@ -51,3 +52,5 @@ Run karein:
 ```
 
 ## 📸 Screenshots
+![Initial UI](assets/image.png)
+![Password generator](assets/image-1.png)
